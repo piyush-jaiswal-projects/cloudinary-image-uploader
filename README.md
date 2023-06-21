@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Cloudinary Image Uploader - Version 1.0
+This webapp helps you to easily upload images to cloud(cloudinary) and generates the URL to share your images easily.
+We are continuously working to upgrade this web app and will soon come up with newer versions with more features and better user experience.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We welcome open source contributions to this repo. So feel free to raise an issue or generate PR if you find any bug.
+
+## You can use it either locally or as webapp deployed on vercel
+
+1. [WebApp](https://picupcloud.vercel.app/)
+This is the simplest way if you just want to upload images and get URL. Simply enter preset and cloud name of your FREE [cloudinary](https://cloudinary.com/) account. Choose image file, and click upload to generate URL.
+
+3. Local Setup
+If you want to use it locally, then simple fork and then clone this repo. Run command `npm install`.
+Create .env file in root directory and add following to it:
+### REACT_APP_UPLOAD_PRESET=enter your preset name
+### REACT_APP_CLOUD_NAME=enter your cloud name
+And then run command `npm start` to start using this web app locally.
+
+## How to generate Preset Name and Cloud Name in Cloudinary?
+- To get the required details, signup on cloudinaryfor FREE
+- Click on Dashboard present on right side of console, and you will find Cloud Name under "Product Environment Credentials"
+- To get preset, click on "setings icon" at bottom left. And then go to "Upload" section present on left side bar.
+- Scroll down to upload preset section. Click "Add upload Preset". Enter preset name and click "Save"
+          
+
+This project was bootstrapped with [Create React App].
 
 ## Available Scripts
 
@@ -8,63 +31,11 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in the development mode.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Developed by PIYUSH JAISWAL
