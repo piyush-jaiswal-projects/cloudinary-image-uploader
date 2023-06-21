@@ -15,8 +15,8 @@ export default function WebApp() {
   const [preset, setPreset] = useState(presetCookie);
   const [cloudName, setCloudName] = useState(cloudCookie);
   const [imageURL, setImageURL] = useState("");
-  const [message, setMessage] = useState(<label className='text-[orange]'>Free to use</label>)
-  const [status, setStatus] = useState(<label className='text-[orange]'>IDLE</label>)
+  const [message, setMessage] = useState(<label className='text-[darkgreen]'>Free to use</label>)
+  const [status, setStatus] = useState(<label className='text-[darkgreen]'>IDLE</label>)
 
   var previewClass = "parent mx-auto w-[" + String(window.width) + "px] h-[" + String(window.height) + "px] rounded "
 
@@ -42,6 +42,8 @@ export default function WebApp() {
     data.append("upload_preset", preset === "" ? process.env.REACT_APP_UPLOAD_PRESET : preset)
     data.append("cloud_name", cloudName === "" ? process.env.REACT_APP_CLOUD_NAME : cloudName)
 
+    setStatus(<label className='text-[orange]'>PENDING</label>)
+    setMessage(<label className='text-[orange]'>Please Wait...</label>)
     fetch(`https://api.cloudinary.com/v1_1/${cloudName === "" ? process.env.REACT_APP_CLOUD_NAME : cloudName}/upload`, {
       method: "post",
       body: data
@@ -56,8 +58,8 @@ export default function WebApp() {
           setStatus(<label className='text-[red]'>FAILED</label>)
         }
         else {
-          setStatus(<label className='text-[green]'>SUCCESS</label>)
-          setMessage(<label className='text-[green]'>Image Uploaded Successfully</label>)
+          setStatus(<label className='text-[green] font-bold'>SUCCESS</label>)
+          setMessage(<label className='text-[green] font-bold'>Image Uploaded Successfully</label>)
           setImage("");
           setImageURL(() => data.url);
         }
