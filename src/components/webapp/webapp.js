@@ -139,7 +139,7 @@ export default function WebApp() {
             Upload Status: {status} | Message: {message}
           </div>
           
-          <p className='m-2 text-dark'>Uploaded Image URL: <a className='underline' href={imageURL}>{imageURL}</a></p>
+          <p className='m-2 text-dark'>Uploaded Image URL: <a className='underline' target='_blank' rel='noreferrer' href={imageURL}>{imageURL}</a></p>
           
           <div>
             <label>Image Preview</label>
