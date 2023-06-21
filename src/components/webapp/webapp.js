@@ -10,7 +10,7 @@ export default function WebApp() {
   const cloudCookie = getCookie("cloudName");
   const rememberCookie = getCookie("remember");
 
-  const window = useWindowSize();
+  const windows = useWindowSize();
   const [image, setImage] = useState("");
   const [preset, setPreset] = useState(presetCookie);
   const [cloudName, setCloudName] = useState(cloudCookie);
@@ -18,7 +18,7 @@ export default function WebApp() {
   const [message, setMessage] = useState(<label className='text-[darkgreen]'>Free to use</label>)
   const [status, setStatus] = useState(<label className='text-[darkgreen]'>IDLE</label>)
 
-  var previewClass = "parent mx-auto w-[" + String(window.width) + "px] h-[" + String(window.height) + "px] rounded "
+  var previewClass = "parent mx-auto w-[" + String(windows.width) + "px] h-[" + String(windows.height) + "px] rounded "
 
   function handleFileChange(e) {
     setImage(() => e.target.files[0]);
@@ -87,7 +87,7 @@ export default function WebApp() {
     document.cookie = "preset=";
     document.cookie = "cloudName=";
     document.cookie = "remember=false";
-    window.reload();
+    window.location.reload();
   }
 
   return (
@@ -120,7 +120,7 @@ export default function WebApp() {
           </div>
           
           <div className='mx-auto mt-2 w-[100%] lg:w-[20%] text-center'>
-            {rememberCookie === "true" ? <label onClick={clearCookies}>Clear Details</label> :
+            {rememberCookie === "true" ? <label className='cursor-pointer' onClick={clearCookies}>Clear Details</label> :
               <>
                 <input className='p-1' id="remember" type="checkbox" onChange={handleCheckboxChange} />
                 <label>Remember details</label>
