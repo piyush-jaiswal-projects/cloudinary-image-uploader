@@ -1,4 +1,5 @@
-# Cloudinary Image Uploader - Version 1.0
+# PicUpCloud - Version 1.0
+## A Cloudinary API based Image Uploader and URL generator.
 This webapp helps you to easily upload images to cloud(cloudinary) and generates the URL to share your images easily.
 We are continuously working to upgrade this web app and will soon come up with newer versions with more features and better user experience.
 
