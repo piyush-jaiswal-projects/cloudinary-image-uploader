@@ -87,6 +87,7 @@ export default function WebApp() {
     document.cookie = "preset=";
     document.cookie = "cloudName=";
     document.cookie = "remember=false";
+    window.reload();
   }
 
   return (
