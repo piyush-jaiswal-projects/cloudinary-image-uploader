@@ -57,6 +57,7 @@ export default function WebApp() {
         if (data.error) {
           setMessage(<label className='text-[red]'>{data.error.message}</label>);
           setStatus(<label className='text-[red]'>FAILED</label>)
+          uploadNewImage(<><button className='cursor-pointer rounded-sm text-[red]' onClick={() => { window.location.reload(); }}>Reload</button> |</>)
         }
         else {
           setStatus(<label className='text-[green] font-bold'>SUCCESS</label>)
@@ -69,6 +70,7 @@ export default function WebApp() {
       .catch((error) => {
         setStatus(<label className='text-[red]'>PENDING</label>)
         setMessage(<label className='text-[red]'>Some Error Occurred</label>)
+        uploadNewImage(<><button className='cursor-pointer rounded-sm text-[red]' onClick={() => { window.location.reload(); }}>Reload</button> |</>)
         console.log(error);
       })
   }
