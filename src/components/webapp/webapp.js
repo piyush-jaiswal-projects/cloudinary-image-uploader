@@ -15,6 +15,7 @@ export default function WebApp() {
   const [preset, setPreset] = useState(presetCookie);
   const [cloudName, setCloudName] = useState(cloudCookie);
   const [imageURL, setImageURL] = useState("");
+  const [newImage, uploadNewImage] = useState("");
   const [message, setMessage] = useState(<label className='text-[darkgreen]'>Free to use</label>)
   const [status, setStatus] = useState(<label className='text-[darkgreen]'>IDLE</label>)
 
@@ -60,6 +61,7 @@ export default function WebApp() {
         else {
           setStatus(<label className='text-[green] font-bold'>SUCCESS</label>)
           setMessage(<label className='text-[green] font-bold'>Image Uploaded Successfully</label>)
+          uploadNewImage(<><button className='cursor-pointer rounded-sm text-[green] font-bold' onClick={() => { window.location.reload(); }}> Upload Another Image</button> |</>)
           setImage("");
           setImageURL(() => data.url);
         }
@@ -80,6 +82,7 @@ export default function WebApp() {
       document.cookie = "preset=" + preset;
       document.cookie = "cloudName=" + cloudName;
       document.cookie = "remember=true";
+    window.location.reload();
     }
   }
 
@@ -139,7 +142,7 @@ export default function WebApp() {
           <button className='bg-dark hover:bg-light text-white p-1 px-2 rounded-lg m-2' onClick={uploadFile}>Upload Image</button>
           
           <div className=''>
-            Upload Status: {status} | Message: {message}
+          | Upload Status: {status} | Message: {message} | {newImage}
           </div>
           
           <p className='m-2 text-dark'>Uploaded Image URL: <a className='underline' target='_blank' rel='noreferrer' href={imageURL}>{imageURL}</a></p>
